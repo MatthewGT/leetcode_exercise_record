@@ -3,7 +3,7 @@ package com.leetcode100;
 import java.util.*;
 
 public class permutation {
-    public List<List<Integer>> permute(int[] nums) {
+    public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         if(nums == null || nums.length == 0)
             return res;
@@ -11,7 +11,7 @@ public class permutation {
         return res;
     }
 
-    private void helper(int[] nums, List<List<Integer>> res,List<Integer> list){
+    private static void helper(int[] nums, List<List<Integer>> res,List<Integer> list){
         if(list.size() == nums.length)
             res.add(new ArrayList<>(list));
         else{
@@ -25,5 +25,10 @@ public class permutation {
                 }
             }
         }
+    }
+
+    public static void main(String[] args){
+        int[] test = {1,2,3};
+        List<List<Integer>> res = permute(test);
     }
 }
